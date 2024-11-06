@@ -27,5 +27,9 @@ test('should return the sum of numbers separated by newlines', () => {
     expect(add('1\n2\n3')).toBe(6);
 });
 
-
+/*step 4 handle custom delimiters */
+test('should handle custom delimiters', () => {
+    expect(add('//;\n1;2')).toBe(3);
+    expect(add('//|\n1|2|3')).toBe(6);
+});
 
