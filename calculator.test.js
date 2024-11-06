@@ -27,9 +27,16 @@ test('should return the sum of numbers separated by newlines', () => {
     expect(add('1\n2\n3')).toBe(6);
 });
 
-/*step 4 handle custom delimiters */
+/*step 5 handle custom delimiters */
 test('should handle custom delimiters', () => {
     expect(add('//;\n1;2')).toBe(3);
     expect(add('//|\n1|2|3')).toBe(6);
 });
+
+/*step 6 handle negative numbers */
+test('should throw an error for negative numbers', () => {
+    expect(() => add('1,-2,3')).toThrow('negative numbers not allowed: -2');
+    expect(() => add('1,-2,-3')).toThrow('negative numbers not allowed: -2, -3');
+  });
+  
 
